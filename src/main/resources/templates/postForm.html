@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Social Media Poster</title>
+</head>
+<body>
+<h2>Post to Social Media</h2>
+
+<form action="/web/post" method="post">
+    <label>Message:</label><br>
+    <textarea name="message" rows="5" cols="50"></textarea><br><br>
+
+    <label>Media URL (optional):</label><br>
+    <input type="text" name="mediaUrl"/><br><br>
+
+    <label>Select Platforms:</label><br>
+    <input type="checkbox" name="platforms" value="twitter"/> Twitter/X<br>
+    <input type="checkbox" name="platforms" value="instagram"/> Instagram<br>
+    <input type="checkbox" name="platforms" value="bluesky"/> Bluesky<br><br>
+
+    <label>Post Time:</label><br>
+    <input type="radio" name="immediate" value="true" checked/> Post Immediately<br>
+    <input type="radio" name="immediate" value="false"/> Schedule<br><br>
+
+    <div id="scheduleTimeInput">
+        <label>Schedule Time (ISO Format):</label><br>
+        <input type="datetime-local" name="scheduleTime"/><br><br>
+    </div>
+
+    <input type="submit" value="Submit Post"/>
+</form>
+</body>
+</html>
